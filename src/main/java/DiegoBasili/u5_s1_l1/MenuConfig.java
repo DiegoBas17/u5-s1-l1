@@ -43,8 +43,17 @@ public class MenuConfig {
         return margherita;
     }
 
+    @Bean
+    public Pizza margheritaXL () {
+        Pizza margherita = new Pizza("Margherita XL", 12.5, 300);
+        margherita.addTopping(pomodoro());
+        margherita.addTopping(mozzarella());
+        return margherita;
+    }
+
+    @Bean
     public Pizza hawaiana () {
-        Pizza hawaiana = new Pizza("hawaiana", 15.5, 250);
+        Pizza hawaiana = new Pizza("Hawaiana", 15.5, 250);
         hawaiana.addTopping(pomodoro());
         hawaiana.addTopping(mozzarella());
         hawaiana.addTopping(prosciutto());
@@ -52,6 +61,17 @@ public class MenuConfig {
         return hawaiana;
     }
 
+    @Bean
+    public Pizza hawaianaXL () {
+        Pizza hawaiana = new Pizza("Hawaiana XL", 20.5, 250);
+        hawaiana.addTopping(pomodoro());
+        hawaiana.addTopping(mozzarella());
+        hawaiana.addTopping(prosciutto());
+        hawaiana.addTopping(ananas());
+        return hawaiana;
+    }
+
+    @Bean
     public Pizza salamella () {
         Pizza salamella = new Pizza("Salamella", 9.5, 350);
         salamella.addTopping(pomodoro());
@@ -60,14 +80,26 @@ public class MenuConfig {
         return salamella;
     }
 
+    @Bean
+    public Pizza salamellaXL () {
+        Pizza salamella = new Pizza("Salamella XL", 18.5, 350);
+        salamella.addTopping(pomodoro());
+        salamella.addTopping(mozzarella());
+        salamella.addTopping(salame());
+        return salamella;
+    }
+
+    @Bean
     public Drinks limonata () {
         return new Drinks("Limonata", 3.0, 100, 0.4);
     }
 
+    @Bean
     public Drinks acqua () {
         return new Drinks("Acqua", 1.0, 0, 0.5);
     }
 
+    @Bean
     public Drinks cola () {
         return new Drinks("Cola", 2.5, 200, 0.33);
     }
@@ -76,8 +108,11 @@ public class MenuConfig {
     public Menu menu() {
         Menu menu = new Menu();
         menu.addElemento(margherita());
+        menu.addElemento(margheritaXL());
         menu.addElemento(hawaiana());
+        menu.addElemento(hawaianaXL());
         menu.addElemento(salamella());
+        menu.addElemento(salamellaXL());
         menu.addElemento(pomodoro());
         menu.addElemento(mozzarella());
         menu.addElemento(prosciutto());
