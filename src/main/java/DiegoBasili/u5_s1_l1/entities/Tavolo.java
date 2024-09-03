@@ -5,7 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-
+@Getter
+@Setter
 public class Tavolo {
     private int numeroTavolo;
     private int numeroCopertiMassimo;
@@ -15,29 +16,5 @@ public class Tavolo {
         this.numeroTavolo = numeroTavolo;
         this.numeroCopertiMassimo = numeroCopertiMassimo;
         this.statoTavolo = StatoTavolo.LIBERO;
-    }
-
-    public int getNumeroTavolo() {
-        return numeroTavolo;
-    }
-
-    public void setNumeroTavolo(int numeroTavolo) {
-        this.numeroTavolo = numeroTavolo;
-    }
-
-    public StatoTavolo getStatoTavolo() {
-        return statoTavolo;
-    }
-
-    public void setStatoTavolo(StatoTavolo statoTavolo) {
-        this.statoTavolo = statoTavolo;
-    }
-
-    public int getNumeroCopertiMassimo() {
-        return numeroCopertiMassimo;
-    }
-
-    public void setNumeroCopertiMassimo(int numeroCopertiMassimo) {
-        this.numeroCopertiMassimo = numeroCopertiMassimo;
     }
 }
