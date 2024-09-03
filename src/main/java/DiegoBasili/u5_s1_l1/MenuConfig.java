@@ -1,13 +1,15 @@
 package DiegoBasili.u5_s1_l1;
 
-import DiegoBasili.u5_s1_l1.entities.Drinks;
-import DiegoBasili.u5_s1_l1.entities.Menu;
-import DiegoBasili.u5_s1_l1.entities.Pizza;
-import DiegoBasili.u5_s1_l1.entities.Topping;
+import DiegoBasili.u5_s1_l1.entities.*;
+import DiegoBasili.u5_s1_l1.enums.StatoOrdine;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
+import java.time.LocalDateTime;
+@PropertySource("application.properties")
 @Configuration
 public class MenuConfig {
 
@@ -123,5 +125,26 @@ public class MenuConfig {
         menu.addElemento(cola());
         menu.addElemento(acqua());
         return menu;
+    }
+
+    @Bean
+    public Ordine ordine () {
+        Ordine ordine = new Ordine(1, StatoOrdine.IN_CORSO, tavolox2().getNumeroCopertiMassimo(), LocalDateTime.now(), tavolox2().getNumeroTavolo());
+        ordine.addElementoComanda(menu().getElementiMenu().get(0));
+        ordine.addElementoComanda(menu().getElementiMenu().get(2));
+        return ordine;
+    }
+
+    @Bean
+    public Tavolo tavolox6 () {
+        return new Tavolo(1, 6);
+    }
+    @Bean
+    public Tavolo tavolox2 () {
+        return new Tavolo(1, 2);
+    }
+    @Bean
+    public Tavolo tavolox4 () {
+        return new Tavolo(1, 4);
     }
 }
