@@ -14,7 +14,15 @@ private List<Cibo> elementiMenu;
     elementiMenu.add(elemento);
 }
 
-public void stampaMenu() {
+    public void stampaMenu() {
     elementiMenu.forEach(System.out::println);
 }
+
+    public List<Cibo> getElementiMenu() {
+        return elementiMenu;
+    }
+
+    public void setElementiMenu(List<Cibo> elementiMenu) {
+        this.elementiMenu = elementiMenu;
+    }
 }

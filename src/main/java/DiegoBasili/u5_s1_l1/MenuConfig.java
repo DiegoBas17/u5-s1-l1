@@ -4,6 +4,7 @@ import DiegoBasili.u5_s1_l1.entities.Drinks;
 import DiegoBasili.u5_s1_l1.entities.Menu;
 import DiegoBasili.u5_s1_l1.entities.Pizza;
 import DiegoBasili.u5_s1_l1.entities.Topping;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
