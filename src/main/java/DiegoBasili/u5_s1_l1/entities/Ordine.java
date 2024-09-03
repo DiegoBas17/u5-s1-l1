@@ -12,8 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @PropertySource("application.properties")
-@Getter
-@Setter
+
 public class Ordine {
     private int numeroOrdine;
     private List<Cibo> comanda;
@@ -42,6 +41,63 @@ public class Ordine {
     double toteleComanda = comanda.stream().mapToDouble(Cibo::getPrice).sum();
     double totaleCoperto = numeroCoperti * costoCoperto;
     return toteleComanda + totaleCoperto;
+    }
+
+
+    public int getNumeroOrdine() {
+        return numeroOrdine;
+    }
+
+    public void setNumeroOrdine(int numeroOrdine) {
+        this.numeroOrdine = numeroOrdine;
+    }
+
+    public double getCostoCoperto() {
+        return costoCoperto;
+    }
+
+    public void setCostoCoperto(double costoCoperto) {
+        this.costoCoperto = costoCoperto;
+    }
+
+    public List<Cibo> getComanda() {
+        return comanda;
+    }
+
+    public void setComanda(List<Cibo> comanda) {
+        this.comanda = comanda;
+    }
+
+    public StatoOrdine getStatoOrdine() {
+        return statoOrdine;
+    }
+
+    public void setStatoOrdine(StatoOrdine statoOrdine) {
+        this.statoOrdine = statoOrdine;
+    }
+
+    public int getNumeroCoperti() {
+        return numeroCoperti;
+    }
+
+    public void setNumeroCoperti(int numeroCoperti) {
+        this.numeroCoperti = numeroCoperti;
+    }
+
+    public LocalDateTime getOraAcquisizione() {
+        return oraAcquisizione;
+    }
+
+    public void setOraAcquisizione(LocalDateTime oraAcquisizione) {
+        this.oraAcquisizione = oraAcquisizione;
+    }
+
+    public int getNumeroTavolo() {
+        return numeroTavolo;
+    }
+
+    public void setNumeroTavolo(int numeroTavolo) {
+        this.numeroTavolo = numeroTavolo;
     }
 
     @Override

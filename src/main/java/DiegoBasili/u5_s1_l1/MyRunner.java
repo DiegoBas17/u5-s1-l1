@@ -24,7 +24,7 @@ public class MyRunner implements CommandLineRunner {
         menu.stampaMenu();
 
         System.out.println(ordine);
-        System.out.println(ordine.conto());
+        System.out.println("il conto del tavolo numero " + ordine.getNumeroTavolo()+ " è: €"  +ordine.conto());
 
         System.out.println("fine run");
     }
