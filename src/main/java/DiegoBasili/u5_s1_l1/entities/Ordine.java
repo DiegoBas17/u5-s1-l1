@@ -32,6 +32,16 @@ public class Ordine {
         this.numeroTavolo = numeroTavolo;
     }
 
+    public Ordine(int numeroOrdine, List<Cibo> comanda, StatoOrdine statoOrdine, LocalDateTime oraAcquisizione, int numeroCoperti, int numeroTavolo, double costoCoperto) {
+        this.numeroOrdine = numeroOrdine;
+        this.comanda = comanda;
+        this.statoOrdine = statoOrdine;
+        this.oraAcquisizione = oraAcquisizione;
+        this.numeroCoperti = numeroCoperti;
+        this.numeroTavolo = numeroTavolo;
+        this.costoCoperto = costoCoperto;
+    }
+
     public void addElementoComanda(Cibo cibo) {
         comanda.add(cibo);
     }
